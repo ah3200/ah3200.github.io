@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>arnnop.hualchareonthon - python</title>
+        <link rel="stylesheet" href="http://ah3200.github.io/theme/css/main.css" />
+        <link href="http://ah3200.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="arnnop.hualchareonthon Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://ah3200.github.io/">arnnop.hualchareonthon </a></h1>
+                <nav><ul>
+                    <li><a href="http://ah3200.github.io/category/posts.html">posts</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://ah3200.github.io/probabilistic-model-for-record-linkage.html">Probabilistic model for record linkage</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-12-08T20:00:00-05:00">
+                Published: Thu 08 December 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://ah3200.github.io/author/arnnop-hualchareonthon.html">Arnnop Hualchareonthon</a>
+        </address>
+<p>In <a href="http://ah3200.github.io/category/posts.html">posts</a>.</p>
+<p>tags: <a href="http://ah3200.github.io/tag/python.html">python</a> </p>
+</footer><!-- /.post-info --><style type="text/css">/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h3><p>We will exemplify the probabilistic record linkage model using sample data from R's RecordLinkage package, called rl500, which consists of 500 records of individual data. The data is loaded from R and transformed into .csv file</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Load dataset</span>
+<span class="n">rl500</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/RLdata500.csv'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>fname_c2</th>
+<th>lname_c1</th>
+<th>lname_c2</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr>
+<th>1</th>
+<td>GERD</td>
+<td>NaN</td>
+<td>BAUER</td>
+<td>NaN</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+</tr>
+<tr>
+<th>2</th>
+<td>ROBERT</td>
+<td>NaN</td>
+<td>HARTMANN</td>
+<td>NaN</td>
+<td>1930</td>
+<td>4</td>
+<td>30</td>
+</tr>
+<tr>
+<th>3</th>
+<td>STEFAN</td>
+<td>NaN</td>
+<td>WOLFF</td>
+<td>NaN</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<th>4</th>
+<td>RALF</td>
+<td>NaN</td>
+<td>KRUEGER</td>
+<td>NaN</td>
+<td>1966</td>
+<td>1</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>fname_c1      0
+fname_c2    472
+lname_c1      0
+lname_c2    492
+by            0
+bm            0
+bd            0
+dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500</span><span class="p">[</span><span class="n">rl500</span><span class="o">.</span><span class="n">fname_c2</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="bp">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>fname_c2</th>
+<th>lname_c1</th>
+<th>lname_c2</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>27</th>
+<td>JAN</td>
+<td>JUERGEN</td>
+<td>SCHAEFER</td>
+<td>NaN</td>
+<td>1946</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr>
+<th>31</th>
+<td>CHRISTIAN</td>
+<td>JENS</td>
+<td>SCHULZ</td>
+<td>NaN</td>
+<td>2008</td>
+<td>5</td>
+<td>18</td>
+</tr>
+<tr>
+<th>32</th>
+<td>ANDREAS</td>
+<td>FRANK</td>
+<td>SCHUMACHER</td>
+<td>NaN</td>
+<td>1928</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<th>55</th>
+<td>PETER</td>
+<td>GUENTHER</td>
+<td>ZIMMERMANN</td>
+<td>NaN</td>
+<td>1996</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr>
+<th>100</th>
+<td>MANFRED</td>
+<td>ANDREAS</td>
+<td>SCHULZ</td>
+<td>NaN</td>
+<td>1998</td>
+<td>4</td>
+<td>9</td>
+</tr>
+<tr>
+<th>195</th>
+<td>DIETER</td>
+<td>KLAUS</td>
+<td>SCHMIDT</td>
+<td>NaN</td>
+<td>1950</td>
+<td>8</td>
+<td>20</td>
+</tr>
+<tr>
+<th>199</th>
+<td>GUENTHER</td>
+<td>FRIEDRICH</td>
+<td>WOLF</td>
+<td>NaN</td>
+<td>1975</td>
+<td>4</td>
+<td>23</td>
+</tr>
+<tr>
+<th>240</th>
+<td>CHRISTIAN</td>
+<td>ALEXANDER</td>
+<td>HERRMANN</td>
+<td>NaN</td>
+<td>1982</td>
+<td>7</td>
+<td>9</td>
+</tr>
+<tr>
+<th>267</th>
+<td>GABRIELE</td>
+<td>GISELA</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1961</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr>
+<th>276</th>
+<td>ERIKA</td>
+<td>EDITH</td>
+<td>BECKER</td>
+<td>NaN</td>
+<td>1970</td>
+<td>7</td>
+<td>12</td>
+</tr>
+<tr>
+<th>289</th>
+<td>HELGA</td>
+<td>ELFRIEDE</td>
+<td>BERGER</td>
+<td>NaN</td>
+<td>1989</td>
+<td>1</td>
+<td>18</td>
+</tr>
+<tr>
+<th>299</th>
+<td>SABINE</td>
+<td>ELKE</td>
+<td>BRANDT</td>
+<td>NaN</td>
+<td>1941</td>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<th>312</th>
+<td>URSULA</td>
+<td>BIRGIT</td>
+<td>MUELLRR</td>
+<td>NaN</td>
+<td>1940</td>
+<td>6</td>
+<td>15</td>
+</tr>
+<tr>
+<th>314</th>
+<td>ANNA</td>
+<td>WALTRAUD</td>
+<td>FISCHER</td>
+<td>NaN</td>
+<td>1958</td>
+<td>11</td>
+<td>27</td>
+</tr>
+<tr>
+<th>355</th>
+<td>BRIGITTE</td>
+<td>EDITH</td>
+<td>PETERS</td>
+<td>NaN</td>
+<td>1956</td>
+<td>8</td>
+<td>21</td>
+</tr>
+<tr>
+<th>357</th>
+<td>HELGA</td>
+<td>ANNA</td>
+<td>LANGE</td>
+<td>NaN</td>
+<td>1965</td>
+<td>9</td>
+<td>7</td>
+</tr>
+<tr>
+<th>375</th>
+<td>ANNA</td>
+<td>BARBARA</td>
+<td>FUCHS</td>
+<td>NaN</td>
+<td>1991</td>
+<td>8</td>
+<td>27</td>
+</tr>
+<tr>
+<th>380</th>
+<td>ANGELIKA</td>
+<td>NICOLE</td>
+<td>FISCHER</td>
+<td>NaN</td>
+<td>1989</td>
+<td>10</td>
+<td>15</td>
+</tr>
+<tr>
+<th>385</th>
+<td>ERIKA</td>
+<td>SABINE</td>
+<td>NEUMANN</td>
+<td>NaN</td>
+<td>1999</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<th>408</th>
+<td>GISELA</td>
+<td>ANGELIKA</td>
+<td>WOLF</td>
+<td>NaN</td>
+<td>1992</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<th>417</th>
+<td>MONIKA</td>
+<td>KARIN</td>
+<td>BRANDT</td>
+<td>NaN</td>
+<td>1940</td>
+<td>2</td>
+<td>18</td>
+</tr>
+<tr>
+<th>433</th>
+<td>ELKE</td>
+<td>SILKE</td>
+<td>BAUER</td>
+<td>NaN</td>
+<td>1994</td>
+<td>5</td>
+<td>29</td>
+</tr>
+<tr>
+<th>444</th>
+<td>ANJA</td>
+<td>URSULA</td>
+<td>WEBER</td>
+<td>NaN</td>
+<td>1995</td>
+<td>6</td>
+<td>26</td>
+</tr>
+<tr>
+<th>456</th>
+<td>URSULA</td>
+<td>BIRGIT</td>
+<td>MUELLER</td>
+<td>NaN</td>
+<td>1940</td>
+<td>6</td>
+<td>15</td>
+</tr>
+<tr>
+<th>465</th>
+<td>HELGA</td>
+<td>ELFRIEDE</td>
+<td>BERGER</td>
+<td>NaN</td>
+<td>1989</td>
+<td>1</td>
+<td>28</td>
+</tr>
+<tr>
+<th>466</th>
+<td>ULRIKE</td>
+<td>NICOLE</td>
+<td>BECKRR</td>
+<td>NaN</td>
+<td>1982</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<th>471</th>
+<td>ULRIKE</td>
+<td>NICOLE</td>
+<td>BECKER</td>
+<td>NaN</td>
+<td>1982</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<th>472</th>
+<td>ANNA</td>
+<td>GUDRUN</td>
+<td>ALBRECHT</td>
+<td>NaN</td>
+<td>1948</td>
+<td>10</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500</span><span class="p">[</span><span class="n">rl500</span><span class="o">.</span><span class="n">lname_c2</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="bp">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>fname_c2</th>
+<th>lname_c1</th>
+<th>lname_c2</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>58</th>
+<td>BERND</td>
+<td>NaN</td>
+<td>JUNG</td>
+<td>KLEIN</td>
+<td>1935</td>
+<td>1</td>
+<td>14</td>
+</tr>
+<tr>
+<th>172</th>
+<td>UWE</td>
+<td>NaN</td>
+<td>WEBER</td>
+<td>ENGEL</td>
+<td>1952</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<th>218</th>
+<td>KLAUS</td>
+<td>NaN</td>
+<td>SCHMIDT</td>
+<td>SCHMIDT</td>
+<td>1997</td>
+<td>12</td>
+<td>15</td>
+</tr>
+<tr>
+<th>335</th>
+<td>JUTTA</td>
+<td>NaN</td>
+<td>ROTH</td>
+<td>SCHMITT</td>
+<td>1995</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<th>359</th>
+<td>BRIGITTE</td>
+<td>NaN</td>
+<td>WAGNER</td>
+<td>SCHULZE</td>
+<td>1978</td>
+<td>12</td>
+<td>11</td>
+</tr>
+<tr>
+<th>418</th>
+<td>HEIKE</td>
+<td>NaN</td>
+<td>OTTO</td>
+<td>FISCHER</td>
+<td>1944</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<th>454</th>
+<td>JUTTA</td>
+<td>NaN</td>
+<td>LEHMANN</td>
+<td>SCHULZ</td>
+<td>1974</td>
+<td>11</td>
+<td>7</td>
+</tr>
+<tr>
+<th>478</th>
+<td>JUTTA</td>
+<td>NaN</td>
+<td>WEBER</td>
+<td>KRUEGER</td>
+<td>2007</td>
+<td>9</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Probabilistic-Record-Linkage">Probabilistic Record Linkage<a class="anchor-link" href="#Probabilistic-Record-Linkage">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The goal of the probabilistic record linkage approach is to identify potential record pairs match by comparing each field from the record pair. There is often the case that when two records of an individual came from different data sources, not all fields are matched, for example, only lastname and birth date matches while firstname does not match because of data input error. Still, we should match these two records as they are considered the same person. In fact, based on individual field match between two record pairs, we will be able to calculate probabilities that the two records represent the same person.</p>
+<p>The theoretical framework behind the probabilistic record linkage is conditional probabilities. We can model the problem using conditional probabilities as below:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let M is the event where two records represent the same person (matched pair)
+Let D is the event where two records  represent the different person (non-matched pair)
+Let x1, x2, x3, ... xn are the events that two fields agree (for each of the n fields)</p>
+<p>Hence, we can define the following probabilities:<br />
+    $ P(M|x_1,...,x_n) $ denotes probability that two records are matched given the fields $ x_1,...,x_n $ matches <br />
+   $ P(D|x_1,...,x_n) $ denotes probability that two records are not matched given the fiedls $ x_1,....,x_n $ matches <br />
+   $ P(x_1|M) $ denotes probability that the field $ x_1 $ matches given two records are matched, we will represent this as m <br />
+   $ P(x_1|D) $ denotes probability that the field $ x_1 $ matches given two records are different, we will represent this as u</p>
+<p>To decide whether a record pair is a match or not, we have to determines the probability $ P(M|x_1,...,x_n) $ vs $ P(D|x_1,...,x_n) $. That is, a record pair is a match if</p>
+$$ P(M|x_1,...,x_n) > P(D|x_1,...,x_n) $$<p>Using Bayes' rule and the independent assumption, we have:</p>
+$$ \frac {P(x_1|M)P(x_2|M)...P(x_n|M) * P(M)} {P(x)}  > \frac {P(x_1|D)P(x_2|D)...P(x_n|D) * P(D)} {P(x)} $$<p>We can rewrite the equation above as:</p>
+$$ \frac {P(M) \prod_{i=1}^n P(x_i|M)} {P(x)} > \frac {P(D) \prod_{i=1}^n P(x_i|D)} {P(x)} $$<p>$ P(x) $ can be cancelled out on both side and we takes logarithm on both sides:
+$$ ln(P(M)\prod_{i=1}^n P(x_i|M))> ln(P(D)\prod_{i=1}^n P(x_i|D)) $$</p>
+<p>and
+$$ ln(P(M)) + \sum_{i=1}^n ln(P(x_i|M))> ln(P(D)) + \sum_{i=1}^n ln(P(x_i|D)) $$</p>
+<p>We will have
+$$ \sum_{i=1}^n (ln(P(x_i|M) - ln(P(x_i|D)) > ln(P(D)) - ln(P(M)) $$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As $ P(x_i|M) $ or $ m $ as we defined above is the probability that field $ x_i $ match given the record match, the probability that the field $ x_i $ does not match given the record pair match is $ (1-m) $. Hence, the probability that the field $ x_i $ does not match give the record pair is not match is $ (1-u) $.</p>
+<p>We can say that if the field match the term $ (ln(P(x_i|M) - ln(P(x_i|D)) = ln(m_i) - ln(u_i) $ <br />
+and that if the field differ the term $ (ln(P(x_i|M) - ln(P(x_i|D)) = ln(1-m_i) - ln(1-u_i) $</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lastly, we can define $ ln(P(D)) - ln(P(M)) $ as a constant lambda $ \lambda $ and refer to it as threshold value, so if the calculation on the left-handed side of the equation exceeds threshold, we can say that the two record pair are likely to be matching pair.</p>
+<p>In practice, we usually define the threshold into three region: non-match, questionable match and match, and output those questionable match pairs for manual clerical review (expert review to identify if the pair should be matched since the system cannot decide)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In conclustion, we can summarize the probabilistic record linkage model as: <br /></p>
+<p>$ \sum_{i=1}^n $<br />
+$ ln(m_i) - ln(u_i), if x_i agrees $ <br />
+$ ln(1-m_i) - ln(1-u_i), if x_i disagrees $</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Defining-m-probability-and-u-probability">Defining m-probability and u-probability<a class="anchor-link" href="#Defining-m-probability-and-u-probability">¶</a></h4><p>From the model, we only need to define m-probability and u-probability</p>
+<p>Recall that<br />
+   m-probability or $ P(x_1|M) $ is the probability that the field $ x_1 $ matches given two records are matched<br />
+   u-probability or $ P(x_1|D) $ is the probability that the field $ x_1 $ matches given two records are different<br /></p>
+<p>m-probability is defined by prior knowledge about the dataset. By default, we set m-probability = 0.95 and we can adjust the value later no as we learn more about the data</p>
+<p>u-probability, in contrast, can be calculated from the dataset. In fact, it is the probability that the field match by chance given the record pair is differing. For example, if we compares 'birth month' field, there is 1/12 chance that two differing records could contain the same birth month since there are 12 months in total. We can apply this same approach in every field in the comparing set.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># U-probability is the proportion of unique value in the field from dataset</span>
+<span class="k">def</span> <span class="nf">calc_u_prob</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+
+<span class="k">def</span> <span class="nf">calc_m_prob</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.95</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Agreement and Disagreement weight formula based on the model</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">agreement_weight</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m</span> <span class="o">/</span> <span class="n">u</span> <span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">disagreement_weight</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">u</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">field_weight</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">comp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">comp</span><span class="p">:</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">agreement_weight</span><span class="p">(</span><span class="n">m_prob</span><span class="p">[</span><span class="n">field</span><span class="p">],</span> <span class="n">u_prob</span><span class="p">[</span><span class="n">field</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">disagreement_weight</span><span class="p">(</span><span class="n">m_prob</span><span class="p">[</span><span class="n">field</span><span class="p">],</span> <span class="n">u_prob</span><span class="p">[</span><span class="n">field</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Add unique identifier to each row</span>
+<span class="n">rl500</span><span class="p">[</span><span class="s">'identifier'</span><span class="p">]</span> <span class="o">=</span> <span class="n">rl500</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Create dummy field to perform cartesian product using Pandas Merge</span>
+<span class="n">rl500</span><span class="p">[</span><span class="s">'key'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">rl500</span><span class="p">,</span> <span class="n">rl500</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'key'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">rl500</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>((250000, 17), (500, 9))</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1_x</th>
+<th>fname_c2_x</th>
+<th>lname_c1_x</th>
+<th>lname_c2_x</th>
+<th>by_x</th>
+<th>bm_x</th>
+<th>bd_x</th>
+<th>identifier_x</th>
+<th>key</th>
+<th>fname_c1_y</th>
+<th>fname_c2_y</th>
+<th>lname_c1_y</th>
+<th>lname_c2_y</th>
+<th>by_y</th>
+<th>bm_y</th>
+<th>bd_y</th>
+<th>identifier_y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>GERD</td>
+<td>NaN</td>
+<td>BAUER</td>
+<td>NaN</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>ROBERT</td>
+<td>NaN</td>
+<td>HARTMANN</td>
+<td>NaN</td>
+<td>1930</td>
+<td>4</td>
+<td>30</td>
+<td>2</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>STEFAN</td>
+<td>NaN</td>
+<td>WOLFF</td>
+<td>NaN</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<th>4</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>RALF</td>
+<td>NaN</td>
+<td>KRUEGER</td>
+<td>NaN</td>
+<td>1966</td>
+<td>1</td>
+<td>13</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Remove self-comparison pair</span>
+<span class="n">rl500_pairs</span> <span class="o">=</span> <span class="n">rl500_pairs</span><span class="p">[</span><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">identifier_x</span> <span class="o">!=</span> <span class="n">rl500_pairs</span><span class="o">.</span><span class="n">identifier_y</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [59]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1_x</th>
+<th>fname_c2_x</th>
+<th>lname_c1_x</th>
+<th>lname_c2_x</th>
+<th>by_x</th>
+<th>bm_x</th>
+<th>bd_x</th>
+<th>identifier_x</th>
+<th>key</th>
+<th>fname_c1_y</th>
+<th>fname_c2_y</th>
+<th>lname_c1_y</th>
+<th>lname_c2_y</th>
+<th>by_y</th>
+<th>bm_y</th>
+<th>bd_y</th>
+<th>identifier_y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>GERD</td>
+<td>NaN</td>
+<td>BAUER</td>
+<td>NaN</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>ROBERT</td>
+<td>NaN</td>
+<td>HARTMANN</td>
+<td>NaN</td>
+<td>1930</td>
+<td>4</td>
+<td>30</td>
+<td>2</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>STEFAN</td>
+<td>NaN</td>
+<td>WOLFF</td>
+<td>NaN</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<th>4</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>RALF</td>
+<td>NaN</td>
+<td>KRUEGER</td>
+<td>NaN</td>
+<td>1966</td>
+<td>1</td>
+<td>13</td>
+<td>4</td>
+</tr>
+<tr>
+<th>5</th>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>JUERGEN</td>
+<td>NaN</td>
+<td>FRANKE</td>
+<td>NaN</td>
+<td>1929</td>
+<td>7</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [66]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span> <span class="o">=</span> <span class="n">rl500_pairs</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [67]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[67]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(249500, 18)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [69]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[69]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>index</th>
+<th>fname_c1_x</th>
+<th>fname_c2_x</th>
+<th>lname_c1_x</th>
+<th>lname_c2_x</th>
+<th>by_x</th>
+<th>bm_x</th>
+<th>bd_x</th>
+<th>identifier_x</th>
+<th>key</th>
+<th>fname_c1_y</th>
+<th>fname_c2_y</th>
+<th>lname_c1_y</th>
+<th>lname_c2_y</th>
+<th>by_y</th>
+<th>bm_y</th>
+<th>bd_y</th>
+<th>identifier_y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>GERD</td>
+<td>NaN</td>
+<td>BAUER</td>
+<td>NaN</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>ROBERT</td>
+<td>NaN</td>
+<td>HARTMANN</td>
+<td>NaN</td>
+<td>1930</td>
+<td>4</td>
+<td>30</td>
+<td>2</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>STEFAN</td>
+<td>NaN</td>
+<td>WOLFF</td>
+<td>NaN</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>RALF</td>
+<td>NaN</td>
+<td>KRUEGER</td>
+<td>NaN</td>
+<td>1966</td>
+<td>1</td>
+<td>13</td>
+<td>4</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5</td>
+<td>CARSTEN</td>
+<td>NaN</td>
+<td>MEIER</td>
+<td>NaN</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+<td>0</td>
+<td>1</td>
+<td>JUERGEN</td>
+<td>NaN</td>
+<td>FRANKE</td>
+<td>NaN</td>
+<td>1929</td>
+<td>7</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [70]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Split data into 2 dataframes</span>
+<span class="c"># We drop fname_c2 and lname_c2 here as there are many missing value in those two fields</span>
+<span class="n">df_a</span> <span class="o">=</span> <span class="n">rl500_pairs</span><span class="p">[[</span><span class="s">'fname_c1_x'</span><span class="p">,</span><span class="s">'lname_c1_x'</span><span class="p">,</span><span class="s">'by_x'</span><span class="p">,</span><span class="s">'bm_x'</span><span class="p">,</span><span class="s">'bd_x'</span><span class="p">]]</span>
+<span class="n">df_b</span> <span class="o">=</span> <span class="n">rl500_pairs</span><span class="p">[[</span><span class="s">'fname_c1_y'</span><span class="p">,</span><span class="s">'lname_c1_y'</span><span class="p">,</span><span class="s">'by_y'</span><span class="p">,</span><span class="s">'bm_y'</span><span class="p">,</span><span class="s">'bd_y'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [71]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">column_name</span> <span class="o">=</span> <span class="p">[</span><span class="s">'fname_c1'</span><span class="p">,</span><span class="s">'lname_c1'</span><span class="p">,</span><span class="s">'by'</span><span class="p">,</span><span class="s">'bm'</span><span class="p">,</span><span class="s">'bd'</span><span class="p">]</span>
+<span class="n">df_a</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_name</span>
+<span class="n">df_b</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_name</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [72]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">df_a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">df_b</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>((249500, 5), (249500, 5))</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [73]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">df_a</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>CARSTEN</td>
+<td>MEIER</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr>
+<th>1</th>
+<td>CARSTEN</td>
+<td>MEIER</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr>
+<th>2</th>
+<td>CARSTEN</td>
+<td>MEIER</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CARSTEN</td>
+<td>MEIER</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr>
+<th>4</th>
+<td>CARSTEN</td>
+<td>MEIER</td>
+<td>1949</td>
+<td>7</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [74]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">df_b</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>GERD</td>
+<td>BAUER</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+</tr>
+<tr>
+<th>1</th>
+<td>ROBERT</td>
+<td>HARTMANN</td>
+<td>1930</td>
+<td>4</td>
+<td>30</td>
+</tr>
+<tr>
+<th>2</th>
+<td>STEFAN</td>
+<td>WOLFF</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<th>3</th>
+<td>RALF</td>
+<td>KRUEGER</td>
+<td>1966</td>
+<td>1</td>
+<td>13</td>
+</tr>
+<tr>
+<th>4</th>
+<td>JUERGEN</td>
+<td>FRANKE</td>
+<td>1929</td>
+<td>7</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [75]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">u_prob</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">m_prob</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="n">df_a</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="c"># Create U-probability table (dataframe) : frequency count of source table</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+    <span class="n">u_prob</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_u_prob</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">df_a</span><span class="p">)</span>
+    <span class="n">m_prob</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_m_prob</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">df_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [76]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">u_prob</span><span class="p">,</span> <span class="n">m_prob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[76]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>({&apos;bd&apos;: 0.03225806451612903,
+  &apos;bm&apos;: 0.08333333333333333,
+  &apos;by&apos;: 0.011627906976744186,
+  &apos;fname_c1&apos;: 0.00684931506849315,
+  &apos;lname_c1&apos;: 0.009259259259259259},
+ {&apos;bd&apos;: 0.95, &apos;bm&apos;: 0.95, &apos;by&apos;: 0.95, &apos;fname_c1&apos;: 0.95, &apos;lname_c1&apos;: 0.95})</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [77]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Initiate comparison matrix and calculated weight matrix</span>
+<span class="n">com_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">df_a</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_a</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">weight_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">df_a</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">df_a</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [78]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Compare and fill the result into the comparison matrix</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+    <span class="n">com_matrix</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_a</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_b</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [79]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">com_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[79]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<th>1</th>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2</th>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<th>3</th>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<th>4</th>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [80]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Calculate total weight from the record comparison and fill into the weight matrix</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+    <span class="n">weight_matrix</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">com_matrix</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">field_weight</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [81]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weight_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[81]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>3.510962</td>
+<td>-4.274622</td>
+</tr>
+<tr>
+<th>1</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+</tr>
+<tr>
+<th>2</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+</tr>
+<tr>
+<th>3</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+</tr>
+<tr>
+<th>4</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>3.510962</td>
+<td>-4.274622</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [82]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Sum to get total weight</span>
+<span class="n">weight_matrix</span><span class="p">[</span><span class="s">'score'</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight_matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [83]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weight_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[83]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>3.510962</td>
+<td>-4.274622</td>
+<td>-13.689235</td>
+</tr>
+<tr>
+<th>1</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>-21.396594</td>
+</tr>
+<tr>
+<th>2</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>-21.396594</td>
+</tr>
+<tr>
+<th>3</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>-21.396594</td>
+</tr>
+<tr>
+<th>4</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>-4.305054</td>
+<td>3.510962</td>
+<td>-4.274622</td>
+<td>-13.689235</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [84]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[84]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>count    249500.000000
+mean        -19.996130
+std           3.533547
+min         -21.396594
+25%         -21.396594
+50%         -21.396594
+75%         -21.396594
+max          20.832774
+Name: score, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [85]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="nb">len</span><span class="p">(</span><span class="n">weight_matrix</span><span class="p">[</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[85]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>92</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [86]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weight_matrix</span><span class="p">[</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[86]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>12081</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+<tr>
+<th>52568</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+<tr>
+<th>52918</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+<tr>
+<th>86931</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+<tr>
+<th>184607</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+<tr>
+<th>238392</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>20.832774</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [87]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">df_a</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">12081</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[87]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>fname_c1    MATTHIAS
+lname_c1        HAAS
+by              1955
+bm                 7
+bd                 8
+Name: 12081, dtype: object</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [88]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">df_b</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">12081</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[88]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>fname_c1    MATTHIAS
+lname_c1        HAAS
+by              1955
+bm                 8
+bd                 8
+Name: 12081, dtype: object</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Distribution-of-the-score">Distribution of the score<a class="anchor-link" href="#Distribution-of-the-score">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [89]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="n">seaborn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[89]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><matplotlib.axes._subplots.axessubplot at 0x7fed07698f10></pre>
+</div>
+</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+gg==
+">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [91]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="nb">len</span><span class="p">(</span><span class="n">weight_matrix</span><span class="p">[</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[91]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>238</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see from the distribution of calculated weight score is lower than zero since most of the records are differing. There are some record pairs that score higher than 20, they are most likely those records that compare to themselves because we did not remove those pairs before calculating the weight (which we should have done it).</p>
+<p>Hence, we will pick sample of the record pairs that scores in range 0 - 20 (positively) to evaluate the result</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [93]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weight_matrix</span><span class="p">[(</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[93]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fname_c1</th>
+<th>lname_c1</th>
+<th>by</th>
+<th>bm</th>
+<th>bd</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>540</th>
+<td>7.115824</td>
+<td>-4.308508</td>
+<td>6.352264</td>
+<td>3.510962</td>
+<td>4.880196</td>
+<td>17.550738</td>
+</tr>
+<tr>
+<th>1545</th>
+<td>7.115824</td>
+<td>-4.308508</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>0.688561</td>
+</tr>
+<tr>
+<th>1729</th>
+<td>7.115824</td>
+<td>-4.308508</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>0.688561</td>
+</tr>
+<tr>
+<th>1887</th>
+<td>-4.312013</td>
+<td>-4.308508</td>
+<td>6.352264</td>
+<td>3.510962</td>
+<td>4.880196</td>
+<td>6.122902</td>
+</tr>
+<tr>
+<th>7481</th>
+<td>-4.312013</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>0.250119</td>
+</tr>
+<tr>
+<th>8175</th>
+<td>-4.312013</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>4.880196</td>
+<td>9.404937</td>
+</tr>
+<tr>
+<th>9030</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>1.020637</td>
+</tr>
+<tr>
+<th>9195</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>1.020637</td>
+</tr>
+<tr>
+<th>9214</th>
+<td>7.115824</td>
+<td>6.680887</td>
+<td>-4.305054</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>1.020637</td>
+</tr>
+<tr>
+<th>10400</th>
+<td>-4.312013</td>
+<td>6.680887</td>
+<td>6.352264</td>
+<td>-4.196397</td>
+<td>-4.274622</td>
+<td>0.250119</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [94]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">match_index</span> <span class="o">=</span> <span class="n">weight_matrix</span><span class="p">[(</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [95]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">match_index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[95]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>[540, 1545, 1729, 1887, 7481, 8175, 9030, 9195, 9214, 10400]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [96]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">weight_matrix</span><span class="p">[(</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o">></span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">weight_matrix</span><span class="o">.</span><span class="n">score</span> <span class="o"><</span> <span class="mi">20</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[[</span><span class="s">'score'</span><span class="p">]],</span> \
+         <span class="n">rl500_pairs</span><span class="p">[</span><span class="n">rl500_pairs</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">match_index</span><span class="p">)][[</span><span class="s">'fname_c1_x'</span><span class="p">,</span><span class="s">'lname_c1_x'</span><span class="p">,</span><span class="s">'by_x'</span><span class="p">,</span><span class="s">'bm_x'</span><span class="p">,</span><span class="s">'bd_x'</span><span class="p">,</span> \
+                                                  <span class="s">'fname_c1_y'</span><span class="p">,</span><span class="s">'lname_c1_y'</span><span class="p">,</span><span class="s">'by_y'</span><span class="p">,</span><span class="s">'bm_y'</span><span class="p">,</span><span class="s">'bd_y'</span><span class="p">]],</span> \
+         <span class="n">left_index</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area"><div class="prompt output_prompt">Out[96]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>score</th>
+<th>fname_c1_x</th>
+<th>lname_c1_x</th>
+<th>by_x</th>
+<th>bm_x</th>
+<th>bd_x</th>
+<th>fname_c1_y</th>
+<th>lname_c1_y</th>
+<th>by_y</th>
+<th>bm_y</th>
+<th>bd_y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>540</th>
+<td>17.550738</td>
+<td>GERD</td>
+<td>BAUER</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+<td>GERD</td>
+<td>BAUERH</td>
+<td>1968</td>
+<td>7</td>
+<td>27</td>
+</tr>
+<tr>
+<th>1545</th>
+<td>0.688561</td>
+<td>STEFAN</td>
+<td>WOLFF</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1957</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<th>1729</th>
+<td>0.688561</td>
+<td>STEFAN</td>
+<td>WOLFF</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1957</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1887</th>
+<td>6.122902</td>
+<td>STEFAN</td>
+<td>WOLFF</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+<td>HELGA</td>
+<td>KOCH</td>
+<td>1957</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<th>7481</th>
+<td>0.250119</td>
+<td>WALTER</td>
+<td>SCHNEIDER</td>
+<td>1953</td>
+<td>8</td>
+<td>26</td>
+<td>SABINE</td>
+<td>SCHNEIDER</td>
+<td>1953</td>
+<td>5</td>
+<td>20</td>
+</tr>
+<tr>
+<th>8175</th>
+<td>9.404937</td>
+<td>ALEXANDER</td>
+<td>MUELLER</td>
+<td>1974</td>
+<td>9</td>
+<td>9</td>
+<td>CHRISTIAN</td>
+<td>MUELLER</td>
+<td>1974</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<th>9030</th>
+<td>1.020637</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1949</td>
+<td>8</td>
+<td>13</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1957</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<th>9195</th>
+<td>1.020637</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1949</td>
+<td>8</td>
+<td>13</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>2004</td>
+<td>4</td>
+<td>20</td>
+</tr>
+<tr>
+<th>9214</th>
+<td>1.020637</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1949</td>
+<td>8</td>
+<td>13</td>
+<td>STEFAN</td>
+<td>MUELLER</td>
+<td>1957</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>10400</th>
+<td>0.250119</td>
+<td>DENNIS</td>
+<td>SCHAEFER</td>
+<td>1956</td>
+<td>4</td>
+<td>11</td>
+<td>INGRID</td>
+<td>SCHAEFER</td>
+<td>1956</td>
+<td>10</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see from the result shown above, the record at the index 540 scores 17.55 because the same first name and birthdate and the slight difference lastname (BAUER vs BAUERH), which could be due to typo error.</p>
+<p>The index 8175, ALEXANDER MUELLER and CHRISTIAN MUELLER is questionable, the same lastname and the birth month difference could result from typo error; however, we can treat this record pair as questionable and require further review.</p>
+<p>The record at the index 9030, 9195 and 9214 scores low despite the same firstname and lastname, since they have different birthdate</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://ah3200.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
